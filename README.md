@@ -16,7 +16,7 @@ For this version, a small microcontroller-like control logic will be implemented
 
 ## Version History
 
-### v0.0.1 ()
+### v0.0.1
 
 UART RX module is active
 - Reads continuous data from the receiver (successful simulation, available in version/0.0.1/result)

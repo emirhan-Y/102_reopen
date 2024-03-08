@@ -16,6 +16,15 @@
 -- Revision 0.01 - File Created
 -- Additional Comments:
 --
+-- Revision: Program counter connection established
+-- Revision 0.1 - Experimental
+-- Additional Comments: 
+-- Removed the output latch, as this operation will be done by the Program ROM now
+-- Added new outputs for ROM control
+-- A new state added indicating the end of transmission
+-- This version successfully passed experiments:
+--  --  A speed reading test was conducted which gives satisfactory results
+-- 
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -30,6 +39,8 @@ entity UART_RX is
         in_100MHz_clk:              in std_logic; -- main clock
         in_rx:                      in std_logic; -- UART receiver 
         
+        out_receiver_status:        out std_logic; -- output the UART receiver status (one byte)
+        out_transmission_status:    out std_logic; -- output the UART transmission status (all data)
         out_byte:                   out std_logic_vector(7 downto 0) -- UART receiver output
     );
 end UART_RX;
@@ -38,13 +49,12 @@ architecture Behavioral of UART_RX is
     
     constant BASYS3_clock_ticks_per_half_UART_clock : integer := clk_freq / (2 * baud_rate); -- how many clock ticks the main clock takes in a half cycle of the UART clock
     -- required for UART sample timing
-    type state is (state_idle, state_start, state_data_read, state_stop, state_recycle); -- UART state struct
+    type state is (state_idle, state_start, state_data_read, state_stop, state_recycle, state_transmission_end); -- UART state struct
     signal current_state : state := state_idle; -- current UART state variable
     -- main FSM state variable
     signal state_clock_counter : integer range 0 to 2 * BASYS3_clock_ticks_per_half_UART_clock := 0; -- clock tick counter for start state
     signal data_bit_counter : integer range 0 to 8 := 0; -- counter for the current data bit 
     signal received_byte : std_logic_vector(7 downto 0); -- received byte holder, since it needs to be buffered (otherwise garbage values will be outputted during transmission)
-    signal out_receiver_status : std_logic := '0';
     
 begin
 
@@ -52,6 +62,7 @@ begin
         if rising_edge(in_100MHz_clk) then
             case current_state is
                 when state_idle =>
+                    out_transmission_status <= '0';
                     out_receiver_status <= '0';
                     state_clock_counter <= 0; -- While idle, push 0 to the state counter (required for false start conditions)
                     if in_rx = '0' then -- After the receive signal goes low
@@ -76,7 +87,11 @@ begin
                     else
                         state_clock_counter <= state_clock_counter + 1; -- we are not in the middle of a data bit; count the clocks
                         if data_bit_counter = 8 then -- means the transmission is over
-                            current_state <= state_stop; -- end the transmission of the byte
+                            if received_byte = "00000100" then -- end of transmission character
+                                current_state <= state_transmission_end; -- complete end of transmission is reached, indicated via a "end of transmission" character
+                            else
+                                current_state <= state_stop; -- end the transmission of the byte
+                            end if;
                         end if;
                     end if;
                 when state_stop => -- Transmission is over
@@ -91,14 +106,12 @@ begin
                     data_bit_counter <= 0;
                     state_clock_counter <= 0;
                     current_state <= state_idle; -- cycle ends
+                when state_transmission_end =>
+                    out_transmission_status <= '1';
             end case;
         end if;
     end process;
     
-    LATCH_DATA: process(out_receiver_status) begin -- output the data after the transmission of the byte is complete
-        if rising_edge(out_receiver_status) then -- otherwise, garbage values will get outputted, which is big NO NO
-            out_byte <= received_byte;
-        end if;
-    end process;
+    out_byte <= received_byte;
 
 end Behavioral;

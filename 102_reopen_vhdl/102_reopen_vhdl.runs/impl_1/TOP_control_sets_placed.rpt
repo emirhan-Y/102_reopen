@@ -1,0 +1,94 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Fri Mar  8 19:01:37 2024
+| Host         : eBirs_monsta running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
+| Design       : TOP
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    16 |
+|    Minimum number of control sets                        |    16 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    79 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    16 |
+| >= 0 to < 4        |     9 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              22 |           10 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              24 |            6 |
+| Yes          | No                    | No                     |              50 |           20 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               9 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------+----------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+|           Clock Signal          |                 Enable Signal                |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------+----------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[3]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[4]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[1]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[6]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[7]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[0]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[2]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[5]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
+|  program_clock_signal_BUFG      |                                              |                                         |                2 |              2 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        |                                              |                                         |                4 |              4 |         1.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/data_bit_counter                    |                                         |                1 |              4 |         4.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/FSM_onehot_current_state[5]_i_1_n_0 |                                         |                2 |              6 |         3.00 |
+|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/state_clock_counter_0               | UART_RX1/state_clock_counter[9]_i_1_n_0 |                3 |              9 |         3.00 |
+|  receiver_status_connector_BUFG |                                              |                                         |                4 |             16 |         4.00 |
+|  in_100MHz_clk_IBUF_BUFG        |                                              | PROGRAM_CLOCK1/clock_counter[0]_i_1_n_0 |                6 |             24 |         4.00 |
+|  program_clock_signal_BUFG      | PROGRAM_ROM1/program_counter_rep[15]_i_1_n_0 |                                         |                9 |             32 |         3.56 |
++---------------------------------+----------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+
+
