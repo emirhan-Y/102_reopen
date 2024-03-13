@@ -22,38 +22,56 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14868
+INFO: [Synth 8-7075] Helper process launched with PID 29036
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1205.508 ; gain = 409.039
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1205.531 ; gain = 407.660
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:38]
-INFO: [Synth 8-3491] module 'UART_RX' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd:33' bound to instance 'UART_RX1' of component 'UART_RX' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:88]
-INFO: [Synth 8-638] synthesizing module 'UART_RX' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:44]
+INFO: [Synth 8-3491] module 'UART' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd:24' bound to instance 'UART1' of component 'UART' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'UART' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd:51]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter baud_rate bound to: 115200 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'UART_RX' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd:48]
-INFO: [Synth 8-3491] module 'PROGRAM_ROM' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd:24' bound to instance 'PROGRAM_ROM1' of component 'PROGRAM_ROM' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:96]
-INFO: [Synth 8-638] synthesizing module 'PROGRAM_ROM' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd:38]
-INFO: [Synth 8-256] done synthesizing module 'PROGRAM_ROM' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd:38]
-INFO: [Synth 8-3491] module 'PROGRAM_CLOCK' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_CLOCK.vhd:24' bound to instance 'PROGRAM_CLOCK1' of component 'PROGRAM_CLOCK' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:108]
-INFO: [Synth 8-638] synthesizing module 'PROGRAM_CLOCK' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_CLOCK.vhd:36]
-	Parameter main_clock_tick_for_half_clock_cycle bound to: 10000000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'PROGRAM_CLOCK' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_CLOCK.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:38]
+	Parameter P_ROM_size bound to: 65535 - type: integer 
+INFO: [Synth 8-3491] module 'UART_RX' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd:33' bound to instance 'UART_RX1' of component 'UART_RX' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd:141]
+INFO: [Synth 8-638] synthesizing module 'UART_RX' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd:53]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter baud_rate bound to: 115200 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'UART_RX' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd:53]
+INFO: [Synth 8-3491] module 'UART_TX' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_TX.vhd:24' bound to instance 'UART_TX1' of component 'UART_TX' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd:151]
+INFO: [Synth 8-638] synthesizing module 'UART_TX' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_TX.vhd:46]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter baud_rate bound to: 115200 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'UART_TX' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_TX.vhd:46]
+INFO: [Synth 8-3491] module 'UART_CONTROLLER' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_CONTROLLER.vhd:24' bound to instance 'UART_CONTROLLER1' of component 'UART_CONTROLLER' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd:162]
+INFO: [Synth 8-638] synthesizing module 'UART_CONTROLLER' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_CONTROLLER.vhd:57]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter baud_rate bound to: 115200 - type: integer 
+	Parameter P_ROM_size bound to: 65535 - type: integer 
+INFO: [Synth 8-3491] module 'R_EDGE_DETECTOR' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/R_EDGE_DETECTOR.vhd:25' bound to instance 'R_EDGE_DETECTOR_RX' of component 'R_EDGE_DETECTOR' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_CONTROLLER.vhd:175]
+INFO: [Synth 8-638] synthesizing module 'R_EDGE_DETECTOR' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/R_EDGE_DETECTOR.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'R_EDGE_DETECTOR' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/R_EDGE_DETECTOR.vhd:34]
+INFO: [Synth 8-3491] module 'R_EDGE_DETECTOR' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/R_EDGE_DETECTOR.vhd:25' bound to instance 'R_EDGE_DETECTOR_TX' of component 'R_EDGE_DETECTOR' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_CONTROLLER.vhd:182]
+INFO: [Synth 8-256] done synthesizing module 'UART_CONTROLLER' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_CONTROLLER.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'UART' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd:51]
+INFO: [Synth 8-3491] module 'PROGRAM_ROM' declared at 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd:24' bound to instance 'PROGRAM_ROM1' of component 'PROGRAM_ROM' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'PROGRAM_ROM' [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd:42]
+	Parameter P_ROM_size bound to: 65535 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'PROGRAM_ROM' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd:44]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1327.934 ; gain = 531.465
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1329.750 ; gain = 531.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1327.934 ; gain = 531.465
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1329.750 ; gain = 531.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1327.934 ; gain = 531.465
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1329.750 ; gain = 531.879
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1327.934 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1329.750 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -64,44 +82,68 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1393.973 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1433.219 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1393.973 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1433.219 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'UART_RX'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'UART_TX'
+INFO: [Synth 8-802] inferred FSM for state register 'current_uart_controller_state_reg' in module 'UART_CONTROLLER'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-              state_idle |                           000001 |                              000
-             state_start |                           000010 |                              001
-         state_data_read |                           000100 |                              010
-  state_transmission_end |                           001000 |                              101
-              state_stop |                           010000 |                              011
-           state_recycle |                           100000 |                              100
+              state_idle |                              000 |                              000
+             state_start |                              001 |                              001
+         state_data_read |                              010 |                              010
+              state_stop |                              011 |                              011
+  state_transmission_end |                              100 |                              101
+           state_recycle |                              101 |                              100
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'UART_RX'
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'UART_RX'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              state_idle |                            00001 |                              000
+             state_start |                            00010 |                              001
+        state_data_write |                            00100 |                              010
+  state_transmission_end |                            01000 |                              100
+           state_recycle |                            10000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'UART_TX'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+     uart_controller_off |                              000 |                              000
+uart_controller_in_transmission |                              001 |                              001
+uart_controller_in_readback |                              010 |                              010
+uart_controller_wait_for_readback_result |                              011 |                              011
+uart_controller_readback_correct |                              100 |                              100
+uart_controller_readback_incorrect |                              101 |                              101
+uart_controller_transmission_complete |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_uart_controller_state_reg' using encoding 'sequential' in module 'UART_CONTROLLER'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -109,24 +151,39 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   16 Bit       Adders := 1     
-	   2 Input   10 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
-	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
 +---RAMs : 
-	             512K Bit	(65536 X 8 bit)          RAMs := 1     
+	             511K Bit	(65535 X 8 bit)          RAMs := 1     
 +---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   7 Input   16 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 1     
 	   6 Input   10 Bit        Muxes := 1     
+	   5 Input   10 Bit        Muxes := 1     
 	   6 Input    8 Bit        Muxes := 1     
-	   6 Input    6 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
 	   6 Input    4 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 2     
-	   6 Input    1 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 7     
+	   6 Input    1 Bit        Muxes := 7     
+	   5 Input    1 Bit        Muxes := 6     
+	   7 Input    1 Bit        Muxes := 19    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -143,8 +200,9 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-5784] Optimized 0 bits of RAM "PROGRAM_ROM1/rom_reg" due to constant propagation. Old ram width 8 bits, new ram width 8 bits.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -154,7 +212,7 @@ Block RAM: Preliminary Mapping Report (see note below)
 +------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |Module Name | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
 +------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|TOP         | PROGRAM_ROM1/rom_reg | 64 K x 8(READ_FIRST)   | W |   | 64 K x 8(WRITE_FIRST)  |   | R | Port A and B     | 0      | 16     | 
+|TOP         | PROGRAM_ROM1/rom_reg | 63 K x 8(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 16     | 
 +------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
@@ -165,13 +223,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:30 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:30 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -181,7 +239,7 @@ Block RAM: Final Mapping Report
 +------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |Module Name | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
 +------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|TOP         | PROGRAM_ROM1/rom_reg | 64 K x 8(READ_FIRST)   | W |   | 64 K x 8(WRITE_FIRST)  |   | R | Port A and B     | 0      | 16     | 
+|TOP         | PROGRAM_ROM1/rom_reg | 63 K x 8(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 16     | 
 +------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
@@ -199,7 +257,7 @@ INFO: [Synth 8-7052] The timing for the instance PROGRAM_ROM1/rom_reg_1_5 (imple
 INFO: [Synth 8-7052] The timing for the instance PROGRAM_ROM1/rom_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance PROGRAM_ROM1/rom_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:30 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -217,37 +275,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -263,41 +321,40 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |BUFG     |     3|
-|2     |CARRY4   |    20|
-|3     |LUT1     |     5|
-|4     |LUT2     |     7|
-|5     |LUT3     |     7|
-|6     |LUT4     |     8|
-|7     |LUT5     |    11|
-|8     |LUT6     |    35|
+|1     |BUFG     |     1|
+|2     |CARRY4   |     4|
+|3     |LUT1     |     1|
+|4     |LUT2     |    16|
+|5     |LUT3     |    14|
+|6     |LUT4     |    33|
+|7     |LUT5     |    25|
+|8     |LUT6     |    53|
 |9     |RAMB36E1 |    16|
-|11    |FDRE     |    95|
-|12    |FDSE     |     9|
-|13    |IBUF     |     2|
-|14    |OBUF     |     8|
+|11    |FDRE     |    83|
+|12    |IBUF     |     4|
+|13    |OBUF     |     3|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1393.973 ; gain = 531.465
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.973 ; gain = 597.504
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1433.219 ; gain = 531.879
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:35 . Memory (MB): peak = 1433.219 ; gain = 635.348
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1393.973 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1433.219 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1393.973 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1433.219 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: eb05995c
+Synth Design complete, checksum: 44028ae6
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+59 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1393.973 ; gain = 974.559
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1433.219 ; gain = 1014.957
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.runs/synth_1/TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  8 19:00:55 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 02:02:00 2024...

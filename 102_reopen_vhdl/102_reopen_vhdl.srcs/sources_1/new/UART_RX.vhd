@@ -3,7 +3,7 @@
 -- Engineer: Emirhan Yagcioglu
 -- 
 -- Create Date: 03/07/2024 11:26:17 PM
--- Design Name: UART RX Module
+-- Design Name: UART Receiver Module
 -- Module Name: UART_RX - Behavioral
 -- Project Name: MIDI Synthesizer
 -- Target Devices: BASYS3
@@ -32,16 +32,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity UART_RX is
     generic (
+        -- generic values (constants) for the module
         clk_freq:                   integer := 100000000;
         baud_rate:                  integer := 115200
     );
-    Port ( 
-        in_100MHz_clk:              in std_logic; -- main clock
-        in_rx:                      in std_logic; -- UART receiver 
-        
+    Port (
+        -- reset
+        reset:                      in std_logic;
+        -- clock
+        in_clk:                     in std_logic; -- main clock
+        -- data lines
+        in_rx:                      in std_logic; -- UART receiver line
+        out_byte:                   out std_logic_vector(7 downto 0); -- UART receiver output
+        -- status flags
         out_receiver_status:        out std_logic; -- output the UART receiver status (one byte)
-        out_transmission_status:    out std_logic; -- output the UART transmission status (all data)
-        out_byte:                   out std_logic_vector(7 downto 0) -- UART receiver output
+        out_rx_data_end_flag:       buffer std_logic -- output the UART receiver status (all data)
     );
 end UART_RX;
 
@@ -58,17 +63,17 @@ architecture Behavioral of UART_RX is
     
 begin
 
-    UART_cycle: process(in_100MHz_clk) begin
-        if rising_edge(in_100MHz_clk) then
+    UART_RX_CYCLE: process(in_clk) begin
+        if rising_edge(in_clk) then
             case current_state is
                 when state_idle =>
-                    out_transmission_status <= '0';
+                    out_rx_data_end_flag <= '0'; -- initial values of the control signals
                     out_receiver_status <= '0';
                     state_clock_counter <= 0; -- While idle, push 0 to the state counter (required for false start conditions)
                     if in_rx = '0' then -- After the receive signal goes low
                         current_state <= state_start; -- set the state to start
                     end if;
-                when state_start => -- RX dropped after a long streak of high, means intention for transmission
+                when state_start => -- RX dropped after a long streak of high, indicating intention for transmission
                     if state_clock_counter = BASYS3_clock_ticks_per_half_UART_clock then -- if half a UART clock cycle has passed in the start state, 
                         if in_rx = '0' then -- we are in the middle of the start bit. If the receive signal is still low, the transmission will begin
                             state_clock_counter <= 0; -- reset the state counter prior to data transmission
@@ -87,17 +92,18 @@ begin
                     else
                         state_clock_counter <= state_clock_counter + 1; -- we are not in the middle of a data bit; count the clocks
                         if data_bit_counter = 8 then -- means the transmission is over
-                            if received_byte = "00000100" then -- end of transmission character
-                                current_state <= state_transmission_end; -- complete end of transmission is reached, indicated via a "end of transmission" character
-                            else
-                                current_state <= state_stop; -- end the transmission of the byte
-                            end if;
+                            current_state <= state_stop;
                         end if;
                     end if;
                 when state_stop => -- Transmission is over
                     if state_clock_counter = 2 * BASYS3_clock_ticks_per_half_UART_clock then -- if a UART clock cycle has passed after the last data point, 
                         out_receiver_status <= '1'; -- we are in the middle of the stop bit. Transmission ends successfully
-                        current_state <= state_recycle; -- recycle UART, go to the beginning
+                        if received_byte = "00001010" then -- end of line character
+                            current_state <= state_transmission_end; -- complete end of transmission is reached, indicated via a "end of transmission" character
+                        else
+                            current_state <= state_recycle; -- recycle UART, go to the beginning
+                        end if;
+                        state_clock_counter <= 0;
                     else 
                         state_clock_counter <= state_clock_counter + 1; -- we are not in the middle of the stop bit; count the clocks
                     end if;
@@ -106,12 +112,20 @@ begin
                     data_bit_counter <= 0;
                     state_clock_counter <= 0;
                     current_state <= state_idle; -- cycle ends
-                when state_transmission_end =>
-                    out_transmission_status <= '1';
+                when state_transmission_end => -- end of transmission flag was received, terminate receive operation
+                    if state_clock_counter = 2 * BASYS3_clock_ticks_per_half_UART_clock then -- wait a bit before setting the end flag
+                        out_receiver_status <= '1';
+                        out_rx_data_end_flag <= '1';
+                        if reset = '1' then
+                            current_state <= state_recycle; -- recycle state resets the rx module
+                        end if;
+                    else 
+                        state_clock_counter <= state_clock_counter + 1; -- we are not in the middle of the stop bit; count the clocks
+                    end if;
             end case;
         end if;
     end process;
     
-    out_byte <= received_byte;
+    out_byte <= received_byte when (out_rx_data_end_flag = '0') else (others => 'Z');
 
 end Behavioral;

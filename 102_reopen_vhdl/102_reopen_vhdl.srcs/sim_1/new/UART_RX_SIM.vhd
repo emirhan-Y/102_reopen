@@ -21,10 +21,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity uart_rx_testbench IS 
-end uart_rx_testbench;
+entity UART_RX_SIM IS 
+end UART_RX_SIM;
 
-architecture uart_rx_testbench_arch of uart_rx_testbench is
+architecture UART_RX_SIM_ARCH of UART_RX_SIM is
     component UART_RX is
         generic (
             clk_freq:                   integer := 100000000;
@@ -225,4 +225,4 @@ begin
         wait;
     end process;
 
-end architecture uart_rx_testbench;
+end architecture UART_RX_SIM_ARCH;

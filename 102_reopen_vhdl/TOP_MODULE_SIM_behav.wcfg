@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TOP_MODULE_SIM_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TOP_MODULE_SIM" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2,603,346.043 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,603,525.602 ns"></ZoomEndTime>
+      <Cursor1Time time="2,603,465.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="223"></NameColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/TOP_MODULE_SIM/in_clk_sig" type="logic">
+      <obj_property name="ElementShortName">in_clk_sig</obj_property>
+      <obj_property name="ObjectShortName">in_clk_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/in_rx_sig" type="logic">
+      <obj_property name="ElementShortName">in_rx_sig</obj_property>
+      <obj_property name="ObjectShortName">in_rx_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/out_tx_sig" type="logic">
+      <obj_property name="ElementShortName">out_tx_sig</obj_property>
+      <obj_property name="ObjectShortName">out_tx_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/byte_connector" type="array">
+      <obj_property name="ElementShortName">byte_connector[7:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_connector[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/address_connector" type="other">
+      <obj_property name="ElementShortName">address_connector</obj_property>
+      <obj_property name="ObjectShortName">address_connector</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/UART1/UART_CONTROLLER1/rx_status_pulse" type="logic">
+      <obj_property name="ElementShortName">rx_status_pulse</obj_property>
+      <obj_property name="ObjectShortName">rx_status_pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/UART1/UART_CONTROLLER1/tx_status_pulse" type="logic">
+      <obj_property name="ElementShortName">tx_status_pulse</obj_property>
+      <obj_property name="ObjectShortName">tx_status_pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/UART1/rx_data_end_flag_signal" type="logic">
+      <obj_property name="ElementShortName">rx_data_end_flag_signal</obj_property>
+      <obj_property name="ObjectShortName">rx_data_end_flag_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/UART1/tx_data_end_flag_signal" type="logic">
+      <obj_property name="ElementShortName">tx_data_end_flag_signal</obj_property>
+      <obj_property name="ObjectShortName">tx_data_end_flag_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/UART1/UART_CONTROLLER1/current_uart_controller_state" type="other">
+      <obj_property name="ElementShortName">current_uart_controller_state</obj_property>
+      <obj_property name="ObjectShortName">current_uart_controller_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/out_end_of_op_flag_sig" type="logic">
+      <obj_property name="ElementShortName">out_end_of_op_flag_sig</obj_property>
+      <obj_property name="ObjectShortName">out_end_of_op_flag_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/PROGRAM_ROM1/inout_byte" type="array">
+      <obj_property name="ElementShortName">inout_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">inout_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/PROGRAM_ROM1/in_chip_enable" type="logic">
+      <obj_property name="ElementShortName">in_chip_enable</obj_property>
+      <obj_property name="ObjectShortName">in_chip_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/PROGRAM_ROM1/in_write_enable" type="logic">
+      <obj_property name="ElementShortName">in_write_enable</obj_property>
+      <obj_property name="ObjectShortName">in_write_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_MODULE_SIM/TOP_inst/PROGRAM_ROM1/in_output_enable" type="logic">
+      <obj_property name="ElementShortName">in_output_enable</obj_property>
+      <obj_property name="ObjectShortName">in_output_enable</obj_property>
+   </wvobject>
+</wave_config>

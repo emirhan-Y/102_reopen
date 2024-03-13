@@ -13,12 +13,14 @@ def init_serial():
 
 def test_serial(uart_serial):
     time.sleep(3)  # after config wait before sending data
-    uart_serial.write(b'0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' + bytes.fromhex(
-        "04"))  # some serial data
+    uart_serial.write(b'asdasd\nasdasd')  # some serial data
 
-    uart_serial.close()  # Close the port
+
+def read_from_the_port(uart_serial):
+    return uart_serial.readline()
 
 
 if __name__ == "__main__":
     basys3_uart_serial = init_serial()
     test_serial(basys3_uart_serial)
+    print(read_from_the_port(basys3_uart_serial))

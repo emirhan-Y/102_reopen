@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Mar  8 19:01:37 2024
+| Date         : Thu Mar 14 02:02:48 2024
 | Host         : eBirs_monsta running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
 | Design       : TOP
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    16 |
-|    Minimum number of control sets                        |    16 |
+| Total control sets                                       |    18 |
+|    Minimum number of control sets                        |    18 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    79 |
+| Unused register locations in slices containing registers |   109 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    16 |
-| >= 0 to < 4        |     9 |
-| >= 4 to < 6        |     2 |
-| >= 6 to < 8        |     1 |
+| Total control sets |    18 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     0 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     0 |
-| >= 16              |     3 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     1 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,37 +58,39 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              22 |           10 |
+| No           | No                    | No                     |              25 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              24 |            6 |
-| Yes          | No                    | No                     |              50 |           20 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              39 |           22 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               9 |            3 |
+| Yes          | Yes                   | No                     |              19 |            6 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+----------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
-|           Clock Signal          |                 Enable Signal                |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
-+---------------------------------+----------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[3]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[4]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[1]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[6]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[7]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[0]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[2]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/received_byte[5]_i_1_n_0            |                                         |                1 |              1 |         1.00 |
-|  program_clock_signal_BUFG      |                                              |                                         |                2 |              2 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        |                                              |                                         |                4 |              4 |         1.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/data_bit_counter                    |                                         |                1 |              4 |         4.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/FSM_onehot_current_state[5]_i_1_n_0 |                                         |                2 |              6 |         3.00 |
-|  in_100MHz_clk_IBUF_BUFG        | UART_RX1/state_clock_counter_0               | UART_RX1/state_clock_counter[9]_i_1_n_0 |                3 |              9 |         3.00 |
-|  receiver_status_connector_BUFG |                                              |                                         |                4 |             16 |         4.00 |
-|  in_100MHz_clk_IBUF_BUFG        |                                              | PROGRAM_CLOCK1/clock_counter[0]_i_1_n_0 |                6 |             24 |         4.00 |
-|  program_clock_signal_BUFG      | PROGRAM_ROM1/program_counter_rep[15]_i_1_n_0 |                                         |                9 |             32 |         3.56 |
-+---------------------------------+----------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
++-------------------+------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|    Clock Signal   |                        Enable Signal                       |                                        Set/Reset Signal                                       | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  in_clk_IBUF_BUFG | UART1/UART_CONTROLLER1/R_EDGE_DETECTOR_TX/out_fatal_error0 |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_CONTROLLER1/R_EDGE_DETECTOR_TX/out_address0     |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_CONTROLLER1/out_end_op0                         |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[0]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[5]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[6]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[1]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[3]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[4]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[2]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/received_byte[7]                            |                                                                                               |                1 |              1 |         1.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/data_bit_counter                            | UART1/UART_RX1/data_bit_counter[3]_i_1_n_0                                                    |                2 |              4 |         2.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_TX1/data_bit_counter                            |                                                                                               |                1 |              4 |         4.00 |
+|  in_clk_IBUF_BUFG | UART1/UART_TX1/FSM_onehot_current_state[4]_i_1_n_0         |                                                                                               |                3 |              5 |         1.67 |
+|  in_clk_IBUF_BUFG | UART1/UART_RX1/state_clock_counter                         |                                                                                               |                4 |              9 |         2.25 |
+|  in_clk_IBUF_BUFG | UART1/UART_TX1/state_clock_counter                         |                                                                                               |                3 |             10 |         3.33 |
+|  in_clk_IBUF_BUFG | UART1/UART_CONTROLLER1/R_EDGE_DETECTOR_TX/out_address0     | UART1/UART_CONTROLLER1/R_EDGE_DETECTOR_TX/FSM_sequential_current_uart_controller_state_reg[1] |                4 |             15 |         3.75 |
+|  in_clk_IBUF_BUFG |                                                            |                                                                                               |               13 |             25 |         1.92 |
++-------------------+------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

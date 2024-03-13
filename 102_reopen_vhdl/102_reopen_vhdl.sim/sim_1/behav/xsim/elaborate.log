@@ -1,7 +1,21 @@
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot testbench_behav xil_defaultlib.testbench -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TOP_MODULE_SIM_behav xil_defaultlib.TOP_MODULE_SIM -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.UART_RX [uart_rx_default]
+Compiling architecture behavioral of entity xil_defaultlib.UART_TX [uart_tx_default]
+Compiling architecture behavioral of entity xil_defaultlib.R_EDGE_DETECTOR [r_edge_detector_default]
+Compiling architecture behavioral of entity xil_defaultlib.UART_CONTROLLER [\UART_CONTROLLER(p_rom_size=6553...]
+Compiling architecture behavioral of entity xil_defaultlib.UART [\UART(p_rom_size=65535)\]
+Compiling architecture behavioral of entity xil_defaultlib.PROGRAM_ROM [\PROGRAM_ROM(p_rom_size=65535)\]
+Compiling architecture behavioral of entity xil_defaultlib.TOP [top_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_module_sim
+Built simulation snapshot TOP_MODULE_SIM_behav

@@ -72,8 +72,8 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 3
+set_param synth.incrementalSynthesisCache C:/Users/Emorh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-28980-eBirs_monsta/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -91,9 +91,12 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_CLOCK.vhd
   C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/PROGRAM_ROM.vhd
+  C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/R_EDGE_DETECTOR.vhd
+  C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART.vhd
+  C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_CONTROLLER.vhd
   C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_RX.vhd
+  C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/UART_TX.vhd
   C:/Users/Emorh/OneDrive/Desktop/102_reopen/102_reopen_git/102_reopen/102_reopen_vhdl/102_reopen_vhdl.srcs/sources_1/new/TOP.vhd
 }
 OPTRACE "Adding files" END { }

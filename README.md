@@ -22,3 +22,11 @@ UART RX module is active
 - Reads continuous data from the receiver (successful simulation, available in version/0.0.1/result)
 - Failure mode fast start bit was tested successfully, though this approach is not the best solution for this problem
 
+### v0.0.2
+
+UART RX - Program ROM connection
+- UART now can send the received byte to the dedicated program ROM. Tested on the hardware using a serial data sender on python. All bytes received and loaded to the ROM successfully (successful test, results available in version/0.0.2/result)
+- Added a temporary ROM clock. This will be later changed to a timer pulse generator.
+
+
+### v0.1
